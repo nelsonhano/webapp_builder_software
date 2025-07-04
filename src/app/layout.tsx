@@ -3,6 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "@uploadthing/react/styles.css";
 import { dark } from "@clerk/themes";
 import type { Metadata } from "next";
+
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,7 +33,14 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

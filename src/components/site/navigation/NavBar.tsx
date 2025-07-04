@@ -1,3 +1,4 @@
+import { ModeToggle } from '@/components/ModeToggle'
 import SaasLogo from '@/components/SaasLogo'
 import { Button } from '@/components/ui/button'
 import { SignedIn, UserButton } from '@clerk/nextjs'
@@ -29,13 +30,13 @@ return (
         </nav>
 
         <aside className='justify-self-end gap-2 flex flex-row'>
-            <Button asChild>
+            <Button asChild className='bg-blue-950 text-white font-bold'>
                 <Link href="/agency">Sign In</Link>
             </Button>
             <SignedIn>
                 <UserButton />
             </SignedIn>
-            <Button>Theme</Button>
+            <ModeToggle />
         </aside>
     </div>
 )}

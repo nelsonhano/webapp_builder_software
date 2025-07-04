@@ -295,6 +295,7 @@ model Tickets {
   Users       Users?    @relation("UserTickets", fields: [userId], references: [id], onDelete: Cascade)
   contactId   String?
   Contacts    Contacts? @relation("ContactTickets", fields: [contactId], references: [id], onDelete: Cascade)
+  
 
   @@index([lineId])
   @@index([userId])
